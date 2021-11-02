@@ -1,0 +1,26 @@
+{
+  "name": "web-bpm",
+  "version": "0.0.0",
+  "description": "Compute beats per minute and register listeners on kick from an audio input",
+  "homepage": "https://github.com/ninofiliu/web-bpm",
+  "repository": "github:ninofiliu/web-bpm",
+  "author": {
+    "name": "Nino Filiu",
+    "url": "https://ninofiliu.com",
+    "email": "nino.filiu@gmail.com"
+  },
+  "keywords": [
+    "audio",
+    "bpm",
+    "beats-per-minute",
+    "sound",
+    "sound-analysis",
+    "sound-processing",
+    "music",
+    "kick-detection"
+  ],
+  "license": "GPL-3.0",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
