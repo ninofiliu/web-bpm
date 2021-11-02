@@ -1,0 +1,10 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "ESNext",
+    "target": "ESNext",
+    "declaration": true,
+    "declarationDir": "types"
+  }
+}

@@ -19,8 +19,13 @@
     "music",
     "kick-detection"
   ],
+  "main": "dist/index.js",
+  "types": "types",
   "license": "GPL-3.0",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
 }
