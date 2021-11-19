@@ -21,3 +21,34 @@ import { getUserInput } from 'web-bpm';
 
 const analyser = await getUserInput(512);
 ```
+
+### createKickDetector
+
+```ts
+const createKickDetector: (analyser: AnalyserNode) => {
+  threshold: number;
+  up: number;
+  smooth: number;
+  onKick: () => void;
+  listen: () => void;
+  stop: () => void;
+}
+```
+
+Triggers a listener on kick
+
+This doesn't analyses BPM, but rather measures the average rise of volume over all frequencies, smoothes it out (`smooth = 0` for no smoothing, `smooth = 1` for constant output), stores in it `up`, and if it's greater than `threshold`, calls back `onKick`.
+
+`listen()` starts listening, `stop()` stops listening.
+
+```ts
+import { getUserInput, createKickDetector } from 'web-bpm';
+
+const analyser = await getUserInput(512);
+const kickDetector = createKickDetector(analyser);
+kickDetector.threshold = 0.01;
+kickDetector.smooth = 0.8;
+kickDetector.onKick = () => console.log('kick');
+kickDetector.listen();
+setTimeout(() => kickDetector.stop(), 10_000);
+```
