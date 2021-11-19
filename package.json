@@ -1,6 +1,6 @@
 {
   "name": "web-bpm",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Compute beats per minute and register listeners on kick from an audio input",
   "homepage": "https://github.com/ninofiliu/web-bpm",
   "repository": "github:ninofiliu/web-bpm",
