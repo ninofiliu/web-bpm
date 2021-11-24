@@ -14,13 +14,18 @@ Captures the browser's microphone audio stream
 
 You might see the browser asking the user for audio recording permission on the first function call
 
-`fftSize` is passed to [`AnalyserNode.fftSize`](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize) and thus should be a power of two between 2^5 and 2^15 
+`fftSize` is passed to [`AnalyserNode.fftSize`](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize) and thus should be a power of two between 2^5 and 2^15
 
 ```ts
-import { getUserInput } from 'web-bpm';
+import { getUserInput } from 'https://cdn.skypack.dev/web-bpm';
 
-const analyser = await getUserInput(512);
+(async () => {
+	const analyser = await getUserInput(512);
+  console.log(analyser);
+})();
 ```
+
+[Fiddle link](https://jsfiddle.net/ninofiliu/ero7m5v3/1/)
 
 ### createKickDetector
 
@@ -44,11 +49,15 @@ This doesn't analyses BPM, but rather measures the average rise of volume over a
 ```ts
 import { getUserInput, createKickDetector } from 'web-bpm';
 
-const analyser = await getUserInput(512);
-const kickDetector = createKickDetector(analyser);
-kickDetector.threshold = 0.01;
-kickDetector.smooth = 0.8;
-kickDetector.onKick = () => console.log('kick');
-kickDetector.listen();
-setTimeout(() => kickDetector.stop(), 10_000);
+(async () => {
+  const analyser = await getUserInput(512);
+  const kickDetector = createKickDetector(analyser);
+  kickDetector.threshold = 0.01;
+  kickDetector.smooth = 0.8;
+  kickDetector.onKick = () => console.log('kick');
+  kickDetector.listen();
+  setTimeout(() => kickDetector.stop(), 10000);
+})();
 ```
+
+[Fiddle link](https://jsfiddle.net/ninofiliu/mcgkhf84/2/)
