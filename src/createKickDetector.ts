@@ -10,11 +10,11 @@ export default (analyser: AnalyserNode) => {
   };
 
   const listen = () => {
-    if (listening)return;
+    if (listening) return;
     listening = true;
     const data = new Uint8Array(analyser.frequencyBinCount);
     const loop = () => {
-      if (!listening)return;
+      if (!listening) return;
       const last = new Uint8Array(data);
       analyser.getByteFrequencyData(data);
       let newUp = 0;

@@ -12,3 +12,5 @@ plugins:
 rules:
   import/no-unresolved: off
   import/extensions: off
+  max-len: off
+  no-plusplus: off
